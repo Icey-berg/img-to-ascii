@@ -241,6 +241,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "img-to-ascii"
+version = "0.1.1"
+dependencies = [
+ "image",
+]
+
+[[package]]
 name = "inflate"
 version = "0.4.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -460,13 +467,6 @@ dependencies = [
  "crossbeam-deque",
  "crossbeam-utils",
  "num_cpus",
-]
-
-[[package]]
-name = "rust-is-hot"
-version = "0.1.0"
-dependencies = [
- "image",
 ]
 
 [[package]]

@@ -1,11 +1,11 @@
 [package]
-name = "img"
-version = "0.1.0"
-edition = "2022"
+name = "img-to-ascii"
+version = "0.1.1"
+edition = "2021"
 description = "Prints out ASCII conversions of supplied images."
-
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+authors = ["Rama Needer <https://github.com/Icey-berg>"]
+repository = "https://github.com/Icey-berg/img-to-ascii"
+publish = false
 
 [dependencies]
 image = "0.24.2"

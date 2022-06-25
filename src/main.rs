@@ -5,7 +5,8 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     let img_path = &args[1];
-    let compress_factor: u32 = *&args[2].parse().unwrap(); // If compress factor is 10, print an ascii character every 10 pixels
+    let compress_factor_x: u32 = *&args[2].parse().unwrap(); // If compress_factor_x is 10, print an ascii character every 10 pixels on X axis
+    let compress_factor_y: u32 = *&args[3].parse().unwrap();
 
     println!("Converting IMG at: {}", img_path);
 
@@ -15,7 +16,7 @@ fn main() {
     let dimensions = img.dimensions();
 
     for (x, y, color) in img.pixels() {
-        if x % compress_factor == 0 && y % compress_factor == 0 {
+        if x % compress_factor_x == 0 && y % compress_factor_y == 0 {
             let brightness: f32 = get_brightness(color);
 
             // Get the ascii character to print judging from the brightness variable
@@ -34,7 +35,7 @@ fn main() {
             print!("{}", icon);
 
             // check if the current pixel is at the end of the image (x axis) and start a new line if so
-            if dimensions.0 == x || (x + compress_factor) > dimensions.0 {
+            if dimensions.0 == x || (x + compress_factor_x) > dimensions.0 {
                 print!("\n")
             }
         }
